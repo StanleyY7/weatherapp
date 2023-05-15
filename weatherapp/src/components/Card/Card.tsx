@@ -1,11 +1,12 @@
 import { Context } from "../Context/Context";
 import styles from "./Card.module.scss";
 import { useContext } from "react";
-import hot from "../../assets/hot.png";
-import cold from "../../assets/cold.png";
+
+import city from "../../assets/city.png";
 
 const Card = () => {
   const { weatherData }: any = useContext(Context);
+
   return (
     <>
       <section className={styles.Card__wrapper}>
@@ -17,10 +18,8 @@ const Card = () => {
                   ? weatherData[0].weather.cityName
                   : ""}
               </h1>
-              <img
-                className={styles.weather__image}
-                src={weatherData[0].weather.temp > 20 ? hot : cold}
-              />
+              <img className={styles.weather__image} src={city} />
+
               <h2>
                 {weatherData[0].weather.currentWeather.temp
                   ? `${weatherData[0].weather.currentWeather.temp}C`
@@ -28,7 +27,7 @@ const Card = () => {
               </h2>
             </>
           ) : (
-            "Please search"
+            <h2>Search for a valid city</h2>
           )}
         </div>
       </section>

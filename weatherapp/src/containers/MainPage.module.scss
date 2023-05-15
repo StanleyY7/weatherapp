@@ -6,3 +6,26 @@
   padding: 4rem;
   text-align: center;
 }
+
+.title {
+  margin-bottom: 2rem;
+  font-size: 5vw;
+}
+
+@media only screen and (max-width: 400px) {
+  .title {
+    font-size: 10vw;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 1200px) {
+  .title {
+    font-size: 8vw;
+  }
+}
+
+@media only screen and (min-width: 2300px) {
+  .title {
+    font-size: 3.5vw;
+  }
+}

@@ -6,7 +6,7 @@ const MainPage = () => {
   return (
     <>
       <div className={styles.MainPage__wrapper}>
-        <h1>Weather App</h1>
+        <h1 className={styles.title}>Weather App</h1>
         <SearchBar />
         <Card />
       </div>
