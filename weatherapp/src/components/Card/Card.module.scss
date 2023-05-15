@@ -1,17 +1,23 @@
 .Card__wrapper {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 2.25rem;
 }
 
 .Card__container {
   width: min-content;
   height: max-content;
-  border: 1px solid red;
-  padding: 2rem;
-  border-radius: 0.25rem;
+  padding: 2rem 6rem;
+  border-radius: 0.75rem;
   transition: 0.5s ease;
+  background-color: rgb(21, 21, 21);
+  color: white;
   &:hover {
     transform: scale(1.035);
   }
+}
+
+.weather__image {
+  width: 8vw;
+  margin: 0.5rem 0;
 }

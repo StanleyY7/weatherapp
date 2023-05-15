@@ -1,31 +1,43 @@
 import styles from "./SearchBar.module.scss";
-import { useLazyQuery } from "@apollo/client";
+import { useState, useContext } from "react";
+import { useQuery } from "@apollo/client";
 import { GET_WEATHER_QUERY } from "../GraphQL/Queries";
+import { Context } from "../Context/Context";
+
 const SearchBar = () => {
-  const [getWeather, { loading, data, error }] = useLazyQuery(
-    GET_WEATHER_QUERY,
-    {
-      variables: { name: "Vancouver" },
-    }
-  );
+  const [city, setCity] = useState("");
+
+  const { setWeatherData, weatherData } = useContext(Context);
+
+  const { data, error } = useQuery(GET_WEATHER_QUERY, {
+    variables: { city },
+  });
 
   if (error) {
-    alert("Error!");
+    console.log(error);
   }
 
-  if (data) {
-    console.log(data);
-  }
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    setCity(e.target.value);
+    setWeatherData([data]);
+    console.log(weatherData);
+  };
+
   return (
     <>
       <section className={styles.SearchBar__wrapper}>
-        <input
-          type="text"
-          required
-          maxLength={21}
-          placeholder="Search for a city"
-        ></input>
-        <button onClick={() => getWeather()}>Submit</button>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <input
+            type="text"
+            required
+            maxLength={21}
+            placeholder="Search for a city"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          ></input>
+          <button type="submit">Submit</button>
+        </form>
       </section>
     </>
   );
