@@ -28,15 +28,17 @@ const SearchBar = () => {
     <>
       <section className={styles.SearchBar__wrapper}>
         <form onSubmit={(e) => handleSubmit(e)}>
-          <input
-            type="text"
-            required
-            maxLength={21}
-            placeholder="Search for a city"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          ></input>
-          <button type="submit">Submit</button>
+          <div className={styles.SearchBar}>
+            <input
+              type="text"
+              required
+              maxLength={21}
+              placeholder="Search for a city"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            ></input>
+            <button type="submit">Submit</button>
+          </div>
         </form>
       </section>
     </>
