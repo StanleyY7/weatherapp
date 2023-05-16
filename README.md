@@ -2,8 +2,8 @@
 
 A practice project to practice using GraphQL (via Apollo Client) with React + TypeScript.
 
-Link: https://6461ec090a41482ca5b99e1e--jocular-profiterole-3f359a.netlify.app/
-![weatherDisplay](https://github.com/StanleyY7/weatherapp/assets/119549394/32a1f890-c728-435e-abdc-132e8c704ed5)
+Link: https://64634e03da9c006a2fe76278--jocular-profiterole-3f359a.netlify.app/
+![wdisplay](https://github.com/StanleyY7/weatherapp/assets/119549394/1cb6fd21-ccd7-433d-8751-2b4125094eb0)
 
 ## Overview/Purpose
 
